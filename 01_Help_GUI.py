@@ -1,7 +1,7 @@
 from tkinter import *
 import random
 
-class Foo:
+class Converter:
     def __init__(self, parent):
         print("hello world")
     
@@ -9,6 +9,6 @@ class Foo:
 #Main Routine
 if __name__ == "__main__":
     root = Tk()
-    root.title("title goes here")
-    something = Foo(root)
+    root.title("Temperature Converter")
+    something = Converter(root)
     root.mainloop()
