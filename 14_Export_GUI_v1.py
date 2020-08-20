@@ -56,9 +56,13 @@ class Export:
         self.export_warning = Label(self.export_frame, text="If the filename you enter below alraedy exists, its contents will be replaced with your calculation history.", bg="#ff9999", padx=10, pady=10, font=("Arial", "12", "italic"), wrap=230)
         self.export_warning.grid(row=2)
 
+        #Filename entry (row 3)
+        self.filename_entry = Entry(self.export_frame)
+        self.filename_entry.grid(row=3)
+
         #Save and cancel button frame
         self.save_cancel_frame = Frame(self.export_frame, padx=10, pady=10, bg=background)
-        self.save_cancel_frame.grid(row=3)
+        self.save_cancel_frame.grid(row=4)
 
         #Save button
         self.save_button = Button(self.save_cancel_frame, text="Save", bg=background, font=("Arial", "14"), padx=10, pady=10)
