@@ -10,7 +10,7 @@ class Converter:
         background_color = "light blue"
 
         #Initialise list to hold calculation history
-        self.all_calculations = []
+        self.all_calc_list = []
 
         #Converter Frame
         self.converter_frame = Frame(width=300, bg=background_color, pady=10)
@@ -46,8 +46,11 @@ class Converter:
         self.nav_buttons = Frame(self.converter_frame, bg=background_color)
         self.nav_buttons.grid(row=5)
 
-        self.history_button = Button(self.nav_buttons, text="History", font="Arial 10 bold", bg="light grey", padx=10, pady=10)
+        self.history_button = Button(self.nav_buttons, text="History", font="Arial 10 bold", bg="light grey", padx=10, pady=10, command=lambda: self.history(self.all_calc_list))
         self.history_button.grid(row=0, column=0)
+
+        if len(self.all_calc_list) == 0:
+            self.history_button.config(state=DISABLED)
 
         self.help_button = Button(self.nav_buttons, text="Help", font="Arial 10 bold", bg="light grey", padx=10, pady=10)
         self.help_button.grid(row=0, column=1)
@@ -91,6 +94,12 @@ class Converter:
                     self.to_convert_entry.config(bg="white")
 
                 #Add Answer to list for History
+                if to == -459:
+                    self.all_calc_list.append("{}C = {}F".format(to_convert, output_temp))
+                    print(self.all_calc_list)
+                else:
+                    self.all_calc_list.append("{}F = {}c".format(to_convert, output_temp))
+                    print(self.all_calc_list)
 
 
         except ValueError:

@@ -91,6 +91,12 @@ class Converter:
                     self.to_convert_entry.config(bg="white")
 
                 #Add Answer to list for History
+                if to == -459:
+                    self.all_calculations.append("{}C = {}F".format(to_convert, output_temp))
+                    print(self.all_calculations)
+                else:
+                    self.all_calculations.append("{}F = {}c".format(to_convert, output_temp))
+                    print(self.all_calculations)
 
 
         except ValueError:
